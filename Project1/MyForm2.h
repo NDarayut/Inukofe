@@ -170,6 +170,8 @@ namespace Project1 {
 			this->Cappucinocst = (gcnew System::Windows::Forms::Label());
 			this->Cappucinolbl = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->vScrollBar1 = (gcnew System::Windows::Forms::VScrollBar());
+			this->Pay = (gcnew System::Windows::Forms::Button());
 			this->Receipt = (gcnew System::Windows::Forms::Button());
 			this->Reset = (gcnew System::Windows::Forms::Button());
 			this->label10 = (gcnew System::Windows::Forms::Label());
@@ -191,13 +193,11 @@ namespace Project1 {
 			this->Qty2 = (gcnew System::Windows::Forms::TextBox());
 			this->Add2 = (gcnew System::Windows::Forms::Button());
 			this->addCart2 = (gcnew System::Windows::Forms::Button());
-			this->Pay = (gcnew System::Windows::Forms::Button());
-			this->vScrollBar1 = (gcnew System::Windows::Forms::VScrollBar());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->cappucinoImg))->BeginInit();
 			this->Cappucino->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -366,6 +366,24 @@ namespace Project1 {
 			this->panel1->Size = System::Drawing::Size(385, 821);
 			this->panel1->TabIndex = 9;
 			// 
+			// vScrollBar1
+			// 
+			this->vScrollBar1->Location = System::Drawing::Point(326, 92);
+			this->vScrollBar1->Name = L"vScrollBar1";
+			this->vScrollBar1->Size = System::Drawing::Size(21, 534);
+			this->vScrollBar1->TabIndex = 18;
+			// 
+			// Pay
+			// 
+			this->Pay->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->Pay->Location = System::Drawing::Point(241, 704);
+			this->Pay->Name = L"Pay";
+			this->Pay->Size = System::Drawing::Size(106, 40);
+			this->Pay->TabIndex = 11;
+			this->Pay->Text = L"Pay";
+			this->Pay->UseVisualStyleBackColor = true;
+			// 
 			// Receipt
 			// 
 			this->Receipt->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -432,6 +450,7 @@ namespace Project1 {
 			this->Cart->Size = System::Drawing::Size(310, 534);
 			this->Cart->TabIndex = 12;
 			this->Cart->Text = L"";
+			this->Cart->TextChanged += gcnew System::EventHandler(this, &MyForm2::Cart_TextChanged);
 			// 
 			// totalBox
 			// 
@@ -616,24 +635,6 @@ namespace Project1 {
 			this->addCart2->UseVisualStyleBackColor = false;
 			this->addCart2->Click += gcnew System::EventHandler(this, &MyForm2::addCart2_Click);
 			// 
-			// Pay
-			// 
-			this->Pay->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->Pay->Location = System::Drawing::Point(241, 704);
-			this->Pay->Name = L"Pay";
-			this->Pay->Size = System::Drawing::Size(106, 40);
-			this->Pay->TabIndex = 11;
-			this->Pay->Text = L"Pay";
-			this->Pay->UseVisualStyleBackColor = true;
-			// 
-			// vScrollBar1
-			// 
-			this->vScrollBar1->Location = System::Drawing::Point(326, 92);
-			this->vScrollBar1->Name = L"vScrollBar1";
-			this->vScrollBar1->Size = System::Drawing::Size(21, 534);
-			this->vScrollBar1->TabIndex = 18;
-			// 
 			// panel2
 			// 
 			this->panel2->Controls->Add(this->numericUpDown1);
@@ -645,21 +646,12 @@ namespace Project1 {
 			this->panel2->Size = System::Drawing::Size(231, 421);
 			this->panel2->TabIndex = 11;
 			// 
-			// label1
+			// numericUpDown1
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(20, 32);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(44, 16);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Name";
-			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(90, 29);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 22);
-			this->textBox1->TabIndex = 1;
+			this->numericUpDown1->Location = System::Drawing::Point(90, 64);
+			this->numericUpDown1->Name = L"numericUpDown1";
+			this->numericUpDown1->Size = System::Drawing::Size(120, 22);
+			this->numericUpDown1->TabIndex = 3;
 			// 
 			// label2
 			// 
@@ -670,12 +662,21 @@ namespace Project1 {
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"Age";
 			// 
-			// numericUpDown1
+			// textBox1
 			// 
-			this->numericUpDown1->Location = System::Drawing::Point(90, 64);
-			this->numericUpDown1->Name = L"numericUpDown1";
-			this->numericUpDown1->Size = System::Drawing::Size(120, 22);
-			this->numericUpDown1->TabIndex = 3;
+			this->textBox1->Location = System::Drawing::Point(90, 29);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(100, 22);
+			this->textBox1->TabIndex = 1;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(20, 32);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(44, 16);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"Name";
 			// 
 			// MyForm2
 			// 
@@ -780,6 +781,8 @@ private: System::Void LatteL_Click(System::Object^ sender, System::EventArgs^ e)
 	Lattecst->Text = "$2.00";
 	Lattecost = 2.00;
 	lattesize = "Large";
+}
+private: System::Void Cart_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

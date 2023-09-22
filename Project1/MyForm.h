@@ -9,6 +9,7 @@ namespace Project1 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SqlClient;
 
 	/// <summary>
 	/// Summary for MyForm
@@ -190,6 +191,19 @@ namespace Project1 {
 
 	private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 		MyForm2^ form2 = gcnew MyForm2();
+		String^ username = this->textBox1->Text;
+		String^ password = this->textBox2->Text;
+		if (username->Length == 0 || password->Length == 0) {
+			MessageBox::Show("        INPUT USERNAME OR PASSWORD!!       ", "Error", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
+			return;
+		}
+		try {
+			String^ connString = "Data Source=DESKTOP-AMR7CFJ;Initial Catalog=admin;Integrated Security=True";
+			SqlConnection sqlConn(connString);
+			sqlConn.Open();
+			String^ sqlQuery ="SELECT * FROM Account WHERE username "
+
+		}
 		
 		if (textBox1->Text == "admin") {
 			if (textBox2->Text == "admin") {
