@@ -201,18 +201,24 @@ namespace Project1 {
 			String^ connString = "Data Source=DESKTOP-AMR7CFJ;Initial Catalog=admin;Integrated Security=True";
 			SqlConnection sqlConn(connString);
 			sqlConn.Open();
-			String^ sqlQuery ="SELECT * FROM Account WHERE username "
-
-		}
-		
-		if (textBox1->Text == "admin") {
-			if (textBox2->Text == "admin") {
+			String^ sqlQuery = "SELECT * FROM Account WHERE username=@username AND password=@password";
+			SqlCommand command(sqlQuery, % sqlConn);
+			command.Parameters->AddWithValue("@username", username);
+			command.Parameters->AddWithValue("@password", password);
+			SqlDataReader^ reader = command.ExecuteReader();
+			if (reader->Read()) {
 				this->Hide();
 				form2->Show();
 			}
-			else { MessageBox::Show("        INVALID INPUT!!!       ", "Error", MessageBoxButtons::OK, MessageBoxIcon::Exclamation); }
+			else{ MessageBox::Show("        YOU'RE WRONG!!       ", "Error", MessageBoxButtons::OK, MessageBoxIcon::Exclamation); }
+
+
 		}
-		else { MessageBox::Show("        INVALID INPUT!!!        ", "Error", MessageBoxButtons::OK, MessageBoxIcon::Exclamation); }
+		catch (Exception^ e) {
+			MessageBox::Show("        Connection fail       ", "Error", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
+		}
+		
+		
 }
 
 
