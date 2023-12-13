@@ -1,0 +1,8 @@
+D:\Inuko_Cafe\Project1\Project1\x64\Debug\Project1.vcxproj.AssemblyReference.cache
+D:\Inuko_Cafe\Project1\Project1\x64\Debug\Project1.MyForm.resources
+D:\Inuko_Cafe\Project1\Project1\x64\Debug\Project1.vcxproj.GenerateResource.cache
+D:\Inuko_Cafe\Project1\Project1\x64\Debug\Project1.MyForm2.resources
+D:\Project1\Project1\x64\Debug\Project1.vcxproj.AssemblyReference.cache
+D:\Project1\Project1\x64\Debug\Project1.MyForm.resources
+D:\Project1\Project1\x64\Debug\Project1.MyForm2.resources
+D:\Project1\Project1\x64\Debug\Project1.vcxproj.GenerateResource.cache

@@ -1,0 +1,8 @@
+﻿  MyForm.cpp
+D:\Project1\Project1\MyForm.h(271,21): warning C4101: 'e': unreferenced local variable
+D:\Project1\Project1\MyForm.h(314,21): warning C4101: 'e': unreferenced local variable
+D:\Project1\Project1\MyForm.cpp(7,33): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
+  MyForm2.cpp
+  Generating Code...
+  MyForm.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Project1.vcxproj -> D:\Project1\x64\Debug\Project1.exe
